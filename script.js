@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    
-    // Check for saved theme preference or use system preference
+
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         body.classList.remove('light');
         body.classList.add('dark');
         themeToggle.checked = true;
     }
-    
+
     themeToggle.addEventListener('change', function() {
         if (this.checked) {
             body.classList.remove('light');
@@ -24,30 +22,27 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'light');
         }
     });
-    
-    // Mobile menu toggle
+
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     mobileMenuButton.addEventListener('click', function() {
         mobileMenu.classList.toggle('hidden');
     });
-    
-    // Close mobile menu when clicking on a link
+
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', function() {
             mobileMenu.classList.add('hidden');
         });
     });
-    
-    // Smooth scrolling for navigation links
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -58,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scroll down button functionality
     const scrollDownButton = document.getElementById('scroll-down');
     scrollDownButton.addEventListener('click', function() {
         const aboutSection = document.getElementById('about');
@@ -69,40 +63,33 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
-    // Contact form submission
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
             const messageInput = document.getElementById('message');
-            
-            // Simple validation
+
             if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
                 alert('Please fill in all fields');
                 return;
             }
-            
-            // Submit button state
+
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
-            
+
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="ri-loader-2-line ri-spin ri-lg mr-2"></i> Sending...';
-            
-            // Create form data object
+
             const formData = new FormData(contactForm);
-            
-            // Send form data to FormSubmit
+
             fetch(contactForm.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             })
             .then(response => {
                 if (response.ok) {
@@ -123,132 +110,107 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animate radar chart in About section
     function animateRadarChart() {
-        var chartDom = document.getElementById('radar-chart');
-        var myChart = echarts.init(chartDom);
-        var option;
+        const chartDom = document.getElementById('radar-chart');
+        const myChart = echarts.init(chartDom);
 
-        option = {
-            radar: {
-                indicator: [
-                    { name: 'Frontend Development', max: 100 },
-                    { name: 'Backend Development', max: 100 },
-                    { name: 'Database Management', max: 100 },
-                    { name: 'API Development', max: 100 },
-                    { name: 'Problem Solving', max: 100 }
-                ],
-                shape: 'circle',
-                splitArea: {
-                    show: true,
-                    areaStyle: {
-                        color: ['#fff', '#f1f1f1', '#e5e7eb', '#d1d5db', '#e5e7eb'],
-                        opacity: 0.8
-                    }
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#e5e7eb'
-                    }
-                },
-                splitLine: {
-                    lineStyle: {
-                        color: '#e5e7eb'
-                    }
-                },
-                name: {
-                    textStyle: {
-                        color: '#1f2937'
-                    }
-                }
-            },
-            series: [{
-                name: 'Skills',
-                type: 'radar',
-                data: [{
-                    value: [85, 80, 80, 85, 90],
-                    name: 'My Skills',
-                    areaStyle: {
-                        color: 'rgba(59, 130, 246, 0.5)'
+        function getChartOptions() {
+            const isMobile = window.innerWidth < 640;
+            const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
+            const fontSize = isMobile ? 10 : isTablet ? 12 : 14;
+            const radius = isMobile ? '55%' : isTablet ? '65%' : '70%';
+            const textColor = document.body.classList.contains('dark') ? '#f3f4f6' : '#1f2937';
+
+            return {
+                radar: {
+                    indicator: [
+                        { name: 'Frontend', max: 100 },
+                        { name: 'Backend', max: 100 },
+                        { name: 'DBMS', max: 100 },
+                        { name: 'API Dev', max: 100 },
+                        { name: 'DSA', max: 100 }
+                    ],
+                    shape: 'circle',
+                    radius: radius,
+                    name: {
+                        textStyle: {
+                            color: textColor,
+                            fontWeight: 'bold',
+                            fontSize: fontSize
+                        }
                     },
-                    lineStyle: {
-                        color: '#3b82f6'
+                    splitArea: {
+                        show: true,
+                        areaStyle: {
+                            color: document.body.classList.contains('dark')
+                                ? ['#111827', '#1f2937', '#374151', '#4b5563', '#374151']
+                                : ['#fff', '#f1f1f1', '#e5e7eb', '#d1d5db', '#e5e7eb'],
+                            opacity: 0.8
+                        }
                     },
-                    itemStyle: {
-                        color: '#3b82f6'
+                    axisLine: {
+                        lineStyle: {
+                            color: document.body.classList.contains('dark') ? '#374151' : '#e5e7eb'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: document.body.classList.contains('dark') ? '#374151' : '#e5e7eb'
+                        }
                     }
+                },
+                series: [{
+                    name: 'Skills',
+                    type: 'radar',
+                    data: [{
+                        value: [85, 80, 80, 85, 90],
+                        name: 'Skill Levels',
+                        label: {
+                            show: true,
+                            position: 'top',
+                            formatter: function(params) {
+                                return params.value + '%';
+                            },
+                            color: textColor,
+                            fontSize: fontSize,
+                            fontWeight: 'bold'
+                        },
+                        areaStyle: {
+                            color: 'rgba(59, 130, 246, 0.5)'
+                        },
+                        lineStyle: {
+                            color: '#3b82f6'
+                        },
+                        itemStyle: {
+                            color: '#3b82f6'
+                        }
+                    }]
                 }]
-            }]
-        };
+            };
+        }
 
-        option && myChart.setOption(option);
+        myChart.setOption(getChartOptions());
 
-        // Dark mode adjustment
-        const body = document.body;
-        const updateChartTheme = () => {
-            if (body.classList.contains('dark')) {
-                myChart.setOption({
-                    radar: {
-                        axisLine: { lineStyle: { color: '#374151' } },
-                        splitLine: { lineStyle: { color: '#374151' } },
-                        splitArea: {
-                            areaStyle: {
-                                color: ['#111827', '#1f2937', '#374151', '#4b5563', '#374151'],
-                                opacity: 0.8
-                            }
-                        },
-                        name: { textStyle: { color: '#f3f4f6' } }
-                    },
-                    series: [{
-                        areaStyle: { color: 'rgba(59, 130, 246, 0.5)' },
-                        lineStyle: { color: '#3b82f6' },
-                        itemStyle: { color: '#3b82f6' }
-                    }]
-                });
-            } else {
-                myChart.setOption({
-                    radar: {
-                        axisLine: { lineStyle: { color: '#e5e7eb' } },
-                        splitLine: { lineStyle: { color: '#e5e7eb' } },
-                        splitArea: {
-                            areaStyle: {
-                                color: ['#fff', '#f1f1f1', '#e5e7eb', '#d1d5db', '#e5e7eb'],
-                                opacity: 0.8
-                            }
-                        },
-                        name: { textStyle: { color: '#1f2937' } }
-                    },
-                    series: [{
-                        areaStyle: { color: 'rgba(59, 130, 246, 0.5)' },
-                        lineStyle: { color: '#3b82f6' },
-                        itemStyle: { color: '#3b82f6' }
-                    }]
-                });
-            }
-        };
-
-        updateChartTheme();
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('change', updateChartTheme);
-
-        // Resize handler
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', () => {
             myChart.resize();
+            myChart.setOption(getChartOptions());
+        });
+
+        themeToggle.addEventListener('change', () => {
+            myChart.setOption(getChartOptions());
         });
     }
 
-    // Animate skill race bars in Skills section
     function animateSkillRaceBars() {
         const skillBars = document.querySelectorAll('.skill-race-bar');
         skillBars.forEach((bar, index) => {
             const progress = bar.getAttribute('data-progress');
             setTimeout(() => {
                 bar.style.width = progress + '%';
-            }, index * 100); // Staggered animation with 100ms delay per bar
+            }, index * 100);
         });
     }
 
-    // Use IntersectionObserver to trigger animations when elements come into view
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -261,13 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    // Observe the sections
     const aboutSection = document.getElementById('about');
     const skillsSection = document.getElementById('skills');
     if (aboutSection) observer.observe(aboutSection);
     if (skillsSection) observer.observe(skillsSection);
 
-    // Back to Top Button
     const backToTopButton = document.getElementById('back-to-top');
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
