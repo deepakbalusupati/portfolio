@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Balusupati - Software Engineer</title>
+    <meta name="description" content="Professional portfolio of Deepak Balusupati, Software Engineer specializing in Backend Development">
+    <meta property="og:title" content="Deepak Balusupati - Software Engineer Portfolio">
+    <meta property="og:description" content="View my projects, skills, and experience as a Software Engineer">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#6366f1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+</head>
+<body class="light">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md border-b border-theme">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">
+                <span class="text-primary">Deepak</span> Balusupati
+            </a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+                
+                <button class="md:hidden w .$@h-10 flex items-center justify-center" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-card shadow-lg absolute w-full border-b border-theme" id="mobile-menu">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#about" class="hover:text-primary transition-colors py-2">About</a>
+                <a href="#skills" class="hover:text-primary transition-colors py-2">Skills</a>
+                <a href="#projects" class="hover:text-primary transition-colors py-2">Projects</a>
+                <a href="#experience" class="hover:text-primary transition-colors py-2">Experience</a>
+                <a href="#contact" class="hover:text-primary transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen pt-24 pb-16 flex items-center relative overflow-hidden" id="hero">
+        <div class="particles">
+            <div class="particle bg-primary" style="width: 15px; height: 15px; top: 10%; left: 10%; animation-delay: 0s;"></div>
+            <div class="particle bg-secondary" style="width: 20px; height: 20px; top: 20%; left: 20%; animation-delay: 1s;"></div>
+            <div class="particle bg-primary" style="width: 10px; height: 10px; top: 30%; left: 30%; animation-delay: 2s;"></div>
+            <div class="particle bg-secondary" style="width: 25px; height: 25px; top: 40%; left: 40%; animation-delay: 3s;"></div>
+            <div class="particle bg-primary" style="width: 15px; height: 15px; top: 50%; left: 50%; animation-delay: 4s;"></div>
+            <div class="particle bg-secondary" style="width: 12px; height: 12px; top: 60%; left: 60%; animation-delay: 5s;"></div>
+            <div class="particle bg-primary" style="width: 18px; height: 18px; top: 70%; left: 70%; animation-delay: 6s;"></div>
+            <div class="particle bg-secondary" style="width: 22px; height: 22px; top: 80%; left: 80%; animation-delay: 7s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">   
+            <!-- Hero content -->
+            <div class="w-full md:w-1/2 animate-fade-in">
+                <p class="text-primary font-medium mb-2">Hello, I'm</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Deepak Balusupati</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary">Software Engineer</h2>
+                <p class="text-lg mb-8 max-w-lg">A passionate Backend Developer specializing in creating elegant solutions to complex problems.
+                    I build scalable, user friendly APIs, databases, and backend systems with modern technologies.
+                    An IIT Hyderabad graduate driven by technology, creativity, curiosity, and a love for exploration.</p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="Assets/Documents/resume.pdf" target="_blank" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
+                        View My Resume
+                    </a>
+                    <a href="#contact" class="border border-primary text-primary px-6 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Profile image -->
+            <div class="w-full md:w-1/2 flex justify-center mt-12 md:mt-0 animate-fade-in delay-200">
+                <div class="relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75"></div>
+                    <div class="relative overflow-hidden w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-gray-800">
+                        <img src="assets/images/profile.jpg" alt="Deepak Balusupati" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Button -->
+        <button id="scroll-down" class="scroll-down-btn">
+            <i class="ri-arrow-down-line"></i>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 relative" id="about">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4">Who I Am</h3>
+                    <p class="mb-4">I'm a Software Engineer with over 1 year of experience building web applications and services. My journey in software development began during my university years, and I've been passionate about creating efficient, scalable, and user friendly solutions ever since.</p>
+                    <p class="mb-4">I specialize in Backend Development, with expertise in building scalable, efficient, and secure server side applications. I enjoy solving complex problems and continuously learning new technologies to stay at the forefront of the industry.</p>
+                    <p>When I'm not coding, you'll find me exploring space, drumming, gaming, or on the football field.
+                        I find rhythm in problem solving and inspiration in everything around me.
+                        My passion for learning and creativity fuels everything I do.</p>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">My Approach</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span>User centered design and development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span>Clean, maintainable, and well documented code</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span>Continuous learning and improvement</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span>Collaborative problem solving</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-6">My Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div id="radar-chart" style="width: 100%; height: 400px;"></div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h3 class="text-xl font-semibold mb-4">Languages I Speak</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="px-4 py-2 bg-card rounded-full border border-theme">Telugu (Native)</div>
+                            <div class="px-4 py-2 bg-card rounded-full border border-theme">English (Advanced)</div>
+                            <div class="px-4 py-2 bg-card rounded-full border border-theme">Hindi (Basic)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-card" id="skills">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-4 dark:bg-blue-900">
+                        <i class="ri-layout-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Frontend</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-html5-fill ri-lg text-orange-500"></i>
+                            </div>
+                            <span>HTML</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-css3-fill ri-lg text-blue-500"></i>
+                            </div>
+                            <span>CSS</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-reactjs-fill ri-lg text-blue-400"></i>
+                            </div>
+                            <span>React.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-bootstrap-fill ri-lg text-purple-500"></i>
+                            </div>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-600 rounded-lg mb-4 dark:bg-green-900 dark:text-green-400">
+                        <i class="ri-server-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Backend</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-c-fill ri-lg text-blue-600"></i>
+                            </div>
+                            <span>C</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-cplusplus-fill ri-lg text-blue-600"></i>
+                            </div>
+                            <span>C++</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-code-box-fill ri-lg text-purple-600"></i>
+                            </div>
+                            <span>C#</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-java-fill ri-lg text-red-500"></i>
+                            </div>
+                            <span>Java</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-javascript-fill ri-lg text-yellow-500"></i>
+                            </div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-python-fill ri-lg text-yellow-500"></i>
+                            </div>
+                            <span>Python</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-database-2-fill ri-lg text-blue-500"></i>
+                            </div>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-api-fill ri-lg text-green-500"></i>
+                            </div>
+                            <span>REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Others -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg mb-4 dark:bg-purple-900 dark:text-purple-400">
+                        <i class="ri-tools-fill ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Tools & Others</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-git-branch-line ri-lg text-orange-600"></i>
+                            </div>
+                            <span>Git</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-github-fill ri-lg text-green-500"></i>
+                            </div>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-swagger-line ri-lg text-blue-500"></i>
+                            </div>
+                            <span>Swagger</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                <i class="ri-linux-fill ri-lg text-green-500"></i>
+                            </div>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Proficiency -->
+            <div class="mt-16">
+                <h3 class="text-xl font-semibold mb-6 text-center">Skills Proficiency</h3>
+                <div class="skill-race-container">
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">Linux</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="85"></div>
+                        </div>
+                        <div class="skill-race-percent">85%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">Swagger</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="90"></div>
+                        </div>
+                        <div class="skill-race-percent">90%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">GitHub</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="95"></div>
+                        </div>
+                        <div class="skill-race-percent">95%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">Git</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="90"></div>
+                        </div>
+                        <div class="skill-race-percent">90%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">REST APIs</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="90"></div>
+                        </div>
+                        <div class="skill-race-percent">90%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">MySQL</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="90"></div>
+                        </div>
+                        <div class="skill-race-percent">90%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">Python</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="80"></div>
+                        </div>
+                        <div class="skill-race-percent">80%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">JavaScript</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="80"></div>
+                        </div>
+                        <div class="skill-race-percent">80%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">Java</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="90"></div>
+                        </div>
+                        <div class="skill-race-percent">90%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">C#</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="85"></div>
+                        </div>
+                        <div class="skill-race-percent">85%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">C++</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="90"></div>
+                        </div>
+                        <div class="skill-race-percent">90%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">C</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="95"></div>
+                        </div>
+                        <div class="skill-race-percent">95%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">Bootstrap</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="80"></div>
+                        </div>
+                        <div class="skill-race-percent">80%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">React.js</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="85"></div>
+                        </div>
+                        <div class="skill-race-percent">85%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">CSS</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="90"></div>
+                        </div>
+                        <div class="skill-race-percent">90%</div>
+                    </div>
+                    <div class="skill-race-row">
+                        <div class="skill-race-label">HTML</div>
+                        <div class="skill-race-bar-container">
+                            <div class="skill-race-bar" data-progress="95"></div>
+                        </div>
+                        <div class="skill-race-percent">95%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20" id="projects">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">My Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card rounded-lg overflow-hidden transition-all hover:shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                        <img src="assets/images/projects/imdb-database.jpg" alt="IMDb Relational Database & REST API" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">IMDb Relational Database & REST API</h3>
+                        <p class="text-secondary mb-4">Designed and built a scalable SQL database and RESTful APIs to streamline movie data storage and retrieval, enabling efficient and reliable.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full dark:bg-blue-900 dark:text-blue-200">MySQL</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full dark:bg-green-900 dark:text-green-200">REST APIs</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full dark:bg-purple-900 dark:text-purple-200">Python</span>
+                        </div>
+                        <a href="https://github.com/deepakbalusupati" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            <i class="ri-github-fill ri-lg mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card rounded-lg overflow-hidden transition-all hover:shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                        <img src="assets/images/projects/firewall.jpg" alt="Raw Socket Firewall with Packet Inspection" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Raw Socket Firewall with Packet Inspection</h3>
+                        <p class="text-secondary mb-4">Developed a Linux based firewall using raw sockets to implement packet filtering, traffic analysis, and access control for enhanced network security.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full dark:bg-blue-900 dark:text-blue-200">C</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full dark:bg-yellow-900 dark:text-yellow-200">C++</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full dark:bg-red-900 dark:text-red-200">Linux</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full dark:bg-purple-900 dark:text-purple-200">Network Security</span>
+                        </div>
+                        <a href="https://github.com/deepakbalusupati" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            <i class="ri-github-fill ri-lg mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="card rounded-lg overflow-hidden transition-all hover:shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                        <img src="assets/images/projects/online-compiler.jpg" alt="Online Code Compiler & Debugger" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Online Code Compiler & Debugger</h3>
+                        <p class="text-secondary mb-4">Built a web based compiler supporting C, C++, and Java, featuring real time code execution and intelligent error detection to streamline the debugging process.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full dark:bg-blue-900 dark:text-blue-200">React.js</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full dark:bg-green-900 dark:text-green-200">JavaScript</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full dark:bg-orange-900 dark:text-orange-200">REST APIs</span>
+                        </div>
+                        <a href="https://github.com/deepakbalusupati" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            <i class="ri-github-fill ri-lg mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="card rounded-lg overflow-hidden transition-all hover:shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                        <img src="assets/images/projects/swarm-robotics.jpg" alt="Swarm Robotics for Task Coordination" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Swarm Robotics for Task Coordination</h3>
+                        <p class="text-secondary mb-4">Designed a decentralized swarm robotics system enabling autonomous task allocation and efficient coordination in multi robot environments.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full dark:bg-blue-900 dark:text-blue-200">C</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full dark:bg-purple-900 dark:text-purple-200">C++</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full dark:bg-green-900 dark:text-green-200">Linux</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full dark:bg-orange-900 dark:text-orange-200">Robotics Algorithms</span>
+                        </div>
+                        <a href="https://github.com/deepakbalusupati" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            <i class="ri-github-fill ri-lg mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="card rounded-lg overflow-hidden transition-all hover:shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                        <img src="assets/images/projects/dating-website.jpg" alt="Dating Website with Matchmaking Algorithm" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Dating Website with Matchmaking Algorithm</h3>
+                        <p class="text-secondary mb-4">Built a full stack dating platform featuring a custom matchmaking algorithm to deliver smarter, compatibility driven user connections.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full dark:bg-blue-900 dark:text-blue-200">React</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full dark:bg-yellow-900 dark:text-yellow-200">JavaScript</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full dark:bg-red-900 dark:text-red-200">MySQL</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full dark:bg-green-900 dark:text-green-200">REST APIs</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full dark:bg-orange-900 dark:text-orange-200">Bootstrap</span>
+                        </div>
+                        <a href="https://github.com/deepakbalusupati" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            <i class="ri-github-fill ri-lg mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-20 bg-card" id="experience">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Experience & Education</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-3 dark:bg-blue-900">
+                            <i class="ri-briefcase-4-line ri-lg"></i>
+                        </div>
+                        Professional Experience
+                    </h3>
+                    
+                    <div class="card p-6 rounded-lg relative border-l-4 border-primary">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold">Software Engineer</h4>
+                            <div class="flex items-center text-secondary">
+                                <i class="ri-calendar-line ri-lg mr-2"></i>
+                                <span>June 2022 - March 2023</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center mr-2">
+                                <i class="ri-building-4-line ri-lg text-blue-500"></i>
+                            </div>
+                            <a href="https://www.zlti.com/" target="_blank" class="text-primary hover:underline">ZL Technologies</a>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Improved system stability by resolving issues and optimizing APIs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Designed Wells Fargo API with C# and SQL for faster data processing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Developed regression tests and led code reviews for quality assurance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Managed Bitbucket repos to streamline team collaboration</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full dark:bg-blue-900 dark:text-blue-200">Java</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full dark:bg-green-900 dark:text-green-200">REST APIs</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full dark:bg-orange-900 dark:text-orange-200">Swagger</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full dark:bg-purple-900 dark:text-purple-200">C#</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full dark:bg-yellow-900 dark:text-yellow-200">JavaScript</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full dark:bg-red-900 dark:text-red-200">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <div class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-full mr-3 dark:bg-green-900 dark:text-green-400">
+                            <i class="ri-graduation-cap-line ri-lg"></i>
+                        </div>
+                        Education
+                    </h3>
+                    
+                    <div class="card p-6 rounded-lg relative border-l-4 border-green-500">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold">Bachelor of Technology in Civil Engineering</h4>
+                            <div class="flex items-center text-secondary">
+                                <i class="ri-calendar-line ri-lg mr-2"></i>
+                                <span>July 2018 - May 2022</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center mr-2">
+                                <i class="ri-building-2-line ri-lg text-green-500"></i>
+                            </div>
+                            <a href="https://www.iith.ac.in/" target="_blank" class="text-primary hover:underline">IIT Hyderabad</a>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-green-500 mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Bachelor's degree in Civil Engineering with interest in Software Engineering and AI</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-green-500 mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Specialized in Data Structures & Algorithms with a focus on problem solving</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-green-500 mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Senior Project: Developed a Swarm Robotics system for Task Coordination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-green-500 mr-2 mt-0.5">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                                <span>Contributed to robotics projects and competitions as a member of the Robotix Club</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full dark:bg-blue-900 dark:text-blue-200">C</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full dark:bg-green-900 dark:text-green-200">Data Structures</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full dark:bg-purple-900 dark:text-purple-200">Algorithms</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full dark:bg-yellow-900 dark:text-yellow-200">Artificial Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20" id="contact">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-4 dark:bg-blue-900">
+                                <i class="ri-mail-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Email</h4>
+                                <a href="mailto:deepakbalusupati.work@gmail.com" class="text-primary hover:underline">deepakbalusupati.work@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center bg-purple-100 text-purple-600 rounded-full mr-4 dark:bg-purple-900 dark:text-purple-400">
+                                <i class="ri-map-pin-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Location</h4>
+                                <p>Khammam, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h3 class="text-xl font-semibold mb-4">Connect With Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/deepak-balusupati-058287357/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full hover:bg-primary hover:text-white transition-colors dark:bg-gray-800 dark:text-gray-300">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                            <a href="https://twitter.com/dee7fcuk" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full hover:bg-primary hover:text-white transition-colors dark:bg-gray-800 dark:text-gray-300">
+                                <i class="ri-twitter-x-fill ri-lg"></i>
+                            </a>
+                            <a href="https://instagram.com/dee7fcuk" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full hover:bg-primary hover:text-white transition-colors dark:bg-gray-800 dark:text-gray-300">
+                                <i class="ri-instagram-fill ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+                    
+                    <form action="https://formsubmit.co/deepakbalusupati.work@gmail.com" method="POST" id="contact-form" class="space-y-6">
+                        <!-- Hidden fields for FormSubmit configuration -->
+                        <input type="hidden" name="_subject" value="New message from your portfolio">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> <!-- Replace with your actual domain -->
+                        <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
+                        
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Your email address" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Your message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap flex items-center">
+                            <i class="ri-send-plane-fill ri-lg mr-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div class="mt-16 rounded-lg overflow-hidden shadow-md h-80 relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.035343034041!2d80.14484031480277!3d17.2479749887721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3465b1a5f9f3a5%3A0x5c5c8c1e1e1e1e1e!2sKhammam%2C%20Telangana!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-lg font-semibold">Deepak Balusupati</p>
+                    <p class="text-gray-400">Software Engineer</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://github.com/deepakbalusupati" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-github-fill ri-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/deepak-balusupati-058287357/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-linkedin-fill ri-lg"></i>
+                    </a>
+                    <a href="https://twitter.com/dee7fcuk" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-twitter-x-fill ri-lg"></i>
+                    </a>
+                    <a href="https://instagram.com/dee7fcuk" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-instagram-fill ri-lg"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>© 2025 Deepak Balusupati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 flex items-center justify-center z-50">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+:where([class^="ri-"])::before { content: "\f3c2"; }
+
+:root {
+    --light-bg: #ffffff;
+    --light-text: #1f2937;
+    --light-secondary: #6b7280;
+    --light-border: #e5e7eb;
+    --light-card: #f9fafb;
+    
+    --dark-bg: #111827;
+    --dark-text: #f3f4f6;
+    --dark-secondary: #9ca3af;
+    --dark-border: #374151;
+    --dark-card: #1f2937;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.light .card {
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+}
+
+.dark .card {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+}
+
+.light .border-theme {
+    border-color: var(--light-border);
+}
+
+.dark .border-theme {
+    border-color: var(--dark-border);
+}
+
+.light .bg-card {
+    background-color: var(--light-card);
+}
+
+.dark .bg-card {
+    background-color: var(--dark-card);
+}
+
+.light .text-secondary {
+    color: var(--light-secondary);
+}
+
+.dark .text-secondary {
+    color: var(--dark-secondary);
+}
+
+/* Custom switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.light .slider {
+    background-color: #e5e7eb;
+}
+
+.dark .slider {
+    background-color: #4b5563;
+}
+
+.light .slider:before {
+    content: "☀️";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.dark .slider:before {
+    content: "🌙";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Custom form styles */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.light .form-input {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
+}
+
+.dark .form-input {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    color: #f3f4f6;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+.light ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.light ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Skill bar animation */
+.skill-bar {
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--light-border);
+    overflow: hidden;
+    position: relative;
+}
+
+.dark .skill-bar {
+    background-color: var(--dark-border);
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: var(--primary);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Remove input number arrows */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Floating particles background */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-30px) translateX(30px);
+    }
+    50% {
+        transform: translateY(-60px) translateX(-30px);
+    }
+    75% {
+        transform: translateY(-30px) translateX(-60px);
+    }
+}
+
+/* Custom skill bar styles */
+.horizontal-skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.horizontal-name {
+    width: 120px;
+    font-size: 14px;
+}
+
+.horizontal-bar {
+    background-color: var(--light-border);
+    height: 8px;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.dark .horizontal-bar {
+    background-color: var(--dark-border);
+}
+
+.horizontal-progress {
+    background-color: var(--primary);
+    height: 100%;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+    border-radius: 5px;
+}
+
+.horizontal-percent {
+    width: 40px;
+    text-align: right;
+    font-size: 14px;
+}
+
+/* Skill race chart styles */
+.skill-race-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.skill-race-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-race-label {
+    width: 100px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--light-text);
+}
+
+.skill-race-bar-container {
+    flex: 1;
+    height: 8px;
+    background: linear-gradient(to right, #e5e7eb 50%, #d1d5db 50%);
+    background-size: 8px 8px;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.dark .skill-race-bar-container {
+    background: linear-gradient(to right, #374151 50%, #4b5563 50%);
+}
+
+.skill-race-bar {
+    height: 100%;
+    background-color: #3b82f6;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+.skill-race-percent {
+    width: 40px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--light-text);
+}
+
+.dark .skill-race-label,
+.dark .skill-race-percent {
+    color: var(--dark-text);
+}
+
+.skill-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-section {
+    margin-bottom: 2rem;
+}
+
+/* Scroll down button styles */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    transition: background-color 0.3s;
+}
+
+.scroll-down-btn:hover {
+    background-color: #2563eb;
+}
+
+.scroll-down-btn i {
+    color: white;
+    font-size: 20px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
