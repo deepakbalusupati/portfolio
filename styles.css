@@ -17,7 +17,6 @@
 body {
     font-family: 'Inter', sans-serif;
     transition: background-color 0.3s, color 0.3s;
-    margin: 0; /* Added to remove default browser margins */
 }
 
 body.light {
