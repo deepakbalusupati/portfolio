@@ -442,6 +442,6 @@ input[type=number] {
 
 .project-link:hover {
     /* color: var(--primary); */
-    color: rgb(115, 115, 235);
+    color: #3b82f6;
     text-decoration: none;
 }
