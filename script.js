@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         myChart.setOption(getChartOptions());
 
-        window.addEventListener('resize', () => {
+        windowUsted.addEventListener('resize', () => {
             myChart.resize();
             myChart.setOption(getChartOptions());
         });
