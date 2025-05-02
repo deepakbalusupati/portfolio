@@ -429,3 +429,19 @@ input[type=number] {
         transform: translateX(-50%) translateY(-5px);
     }
 }
+
+/* Remove underline and clean up "View on GitHub" link styling */
+.project-link {
+    text-decoration: none !important;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    /* color: var(--primary); */
+    color: rgb(115, 115, 235);
+    text-decoration: none;
+}
