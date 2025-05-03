@@ -8,14 +8,32 @@
     <meta property="og:title" content="Deepak Balusupati - Software Engineer Portfolio">
     <meta property="og:description" content="View my projects, skills, and experience as a Software Engineer">
     <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#6366f1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('AWGCuPh2a9lNC185u');
+        })();
+    </script>
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- ECharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 </head>
 <body class="light">
@@ -41,7 +59,7 @@
                     <span class="slider"></span>
                 </label>
                 
-                <button class="md:hidden w .$@h-10 flex items-center justify-center" id="mobile-menu-button">
+                <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
                     <i class="ri-menu-line ri-lg"></i>
                 </button>
             </div>
@@ -718,22 +736,17 @@
                 <div class="w-full md:w-1/2">
                     <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
                     
-                    <form action="https://formsubmit.co/deepakbalusupati.work@gmail.com" method="POST" id="contact-form" class="space-y-6">
-                        <!-- Hidden fields for FormSubmit configuration -->
-                        <input type="hidden" name="_subject" value="New message from your portfolio">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> <!-- Replace with your actual domain -->
-                        <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
+                    <form id="contact-form" class="space-y-6">
+                        <input type="hidden" name="contact_number">
                         
                         <div>
                             <label for="name" class="block mb-2 font-medium">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                            <input type="text" id="name" name="from_name" class="form-input" placeholder="Your name" required>
                         </div>
                         
                         <div>
                             <label for="email" class="block mb-2 font-medium">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Your email address" required>
+                            <input type="email" id="email" name="from_email" class="form-input" placeholder="Your email address" required>
                         </div>
                         
                         <div>
@@ -790,7 +803,6 @@
         <i class="ri-arrow-up-line ri-lg"></i>
     </button>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
