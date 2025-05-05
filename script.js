@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         { name: 'Frontend', max: 100 },
                         { name: 'Backend', max: 100 },
                         { name: 'DBMS', max: 100 },
-                        { name: 'API Dev', max: 100 },
+                        { name: 'APIs', max: 100 },
                         { name: 'DSA', max: 100 }
                     ],
                     shape: 'circle',
